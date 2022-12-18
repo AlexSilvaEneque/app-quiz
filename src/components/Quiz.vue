@@ -165,10 +165,10 @@ li {
 .disabled {
     pointer-events: none;
 }
-li:hover {
+/* li:hover {
     background-color: #F9A826;
     color: #fff;
-}
+} */
 span {
     margin-right: 1.8rem;
 }
@@ -217,6 +217,13 @@ p {
     margin-right: auto;
     margin-left: auto;
     margin-top: 2rem;
+}
+
+@media (min-width: 769px) {
+    li:hover {
+        background-color: #F9A826;
+        color: #fff;
+    }
 }
 
 @media (max-width: 471px) {

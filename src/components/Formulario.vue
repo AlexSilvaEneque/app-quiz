@@ -37,4 +37,13 @@ h1 {
     font-size: 36px;
 }
 
+@media (max-width: 471px) {
+    .wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 </style>

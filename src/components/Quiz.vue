@@ -219,4 +219,25 @@ p {
     margin-top: 2rem;
 }
 
+@media (max-width: 471px) {
+    .wrapper__formulario {
+        width: 90%;
+    }
+
+    .wrapper__formulario__pregunta {
+        width: 100%;
+        /* border: solid; */
+    }
+
+    h3 {
+        text-overflow: ellipsis;
+        font-size: 18px;
+    }
+    
+    .wrapper__formulario__alternativas {
+        width: 100%;
+
+    }
+}
+
 </style>

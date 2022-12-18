@@ -14,7 +14,8 @@
 <style scoped>
 .wrapper__main {
   background-color: var(--background-main);
-  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
   width: 100%;
   display: flex;
   align-items: center;

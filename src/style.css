@@ -1,0 +1,15 @@
+:root {
+  --background-main: #5256A1;
+  --background-form: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+ul {
+  list-style: none;
+}

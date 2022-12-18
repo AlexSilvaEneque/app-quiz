@@ -21,14 +21,12 @@
   justify-content: center;
   flex-direction: column;
 }
-
 .footer {
   width: 100%;
   text-align: center;
   margin-top: 2em;
   color: #fff;
 }
-
 .external__link {
   color: #fff;
   font-weight: 600;

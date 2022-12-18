@@ -130,20 +130,16 @@
     border-radius: 24px;
     background-color: var(--background-form);
 }
-
 h3 {
     font-size: 24px;
 }
-
 .wrapper__formulario__alternativas {
     width: 400px;
     padding-top: 1.5rem;
 }
-
 ul {
     width: 100%;
 }
-
 li {
     align-items: center;
     border-radius: 12px;
@@ -158,35 +154,28 @@ li {
     transition: .4s all;
     width: 100%;
 }
-
 .correct {
     background-color: #60BF88;
     color: #fff;
 }
-
 .incorrect {
     background-color: #EA8282;
     color: #fff;
 }
-
 .disabled {
     pointer-events: none;
 }
-
 li:hover {
     background-color: #F9A826;
     color: #fff;
 }
-
 span {
     margin-right: 1.8rem;
 }
-
 .wrapper__formulario__footer {
     text-align: right;
     width: 100%;
 }
-
 button {
     background-color: #F9A826;
     border-radius: 12px;
@@ -198,31 +187,26 @@ button {
     height: 56px;
     width: 116px;
 }
-
 .wrapper__imagen {
     display: flex;
     justify-content: center;
 }
-
 h2 {
     margin-top: 5rem;
     font-size: 48px;
     text-align: center;
     margin-bottom: 1rem;
 }
-
 p {
     text-align: center;
     font-size: 18px;
 }
-
 .pass {
     margin-right: 0;
     color: #60BF88;
     font-weight: 700;
     font-size: 30px;
 }
-
 .btn__try {
     width: 209px;
     height: 62px;
@@ -234,4 +218,5 @@ p {
     margin-left: auto;
     margin-top: 2rem;
 }
+
 </style>

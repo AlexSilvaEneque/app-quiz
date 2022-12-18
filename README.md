@@ -2,9 +2,7 @@
 
 <h1 align="center">Fast Quiz</h1>
 
-## Overview
 
-<img src="https://github.com/AlexSilvaEneque/app-quiz/issues/1#issue-1501648469">
 
 ### Built With
 

@@ -4,7 +4,7 @@
 
 ## Overview
 
-<img src="https://user-images.githubusercontent.com/83987498/179363984-e50644f1-1836-48a4-9c09-43ed43405fe8.png" width="50">
+<img src="https://github.com/AlexSilvaEneque/app-quiz/issues/1#issue-1501648469">
 
 ### Built With
 

@@ -12,6 +12,6 @@
 
 ## Contact
 
-- Website [your-website.com](https://amsedev.vercel.app/)
-- GitHub [@your-username](https://github.com/AlexSilvaEneque)
-- Instagram [@your-twitter](https://www.instagram.com/silvaenequealex/)
+- Website [amsedev](https://amsedev.vercel.app/)
+- GitHub [@AlexSilvaEneque](https://github.com/AlexSilvaEneque)
+- Instagram [@silvaenequealex](https://www.instagram.com/silvaenequealex/)

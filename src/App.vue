@@ -1,10 +1,27 @@
 <script setup>
+  import { onMounted, ref } from 'vue'
   import Formulario from './components/Formulario.vue'
+  import Home from './components/Home.vue'
+
+  import store from './store'
+
+  const data = ref([])
+  const bol = ref()
+
+  const quiz = () => {
+
+    data.value.push({
+      qty: store.qtyQuestion, 
+      category: store.category
+    })
+  }
 </script>
 
 <template>
   <div class="wrapper__main">
-    <Formulario />
+
+    <Home  v-if="store.start" @start-quiz="quiz"/>
+    <Formulario v-else :data="data" />
     <div class="footer">
       <p>&#169; created by <a href="https://www.instagram.com/silvaenequealex/" target="_blank" class="external__link">AmseDev</a></p>
     </div>

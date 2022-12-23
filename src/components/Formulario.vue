@@ -1,25 +1,33 @@
 <script setup>
-    import { onMounted, reactive, ref } from 'vue'
+    import { onMounted, ref } from 'vue'
+    import store from '../store'
     import Quiz from './Quiz.vue'
+
+    const prop = defineProps({
+        data: {
+            type: Object,
+            required: true
+        }
+    })
 
     const flag = ref(false)
     const questions = ref([])
 
     const getQuestions = async () => {
-        const res = await fetch('https://opentdb.com/api.php?amount=5&category=9&type=multiple')
+        const res = await fetch(`https://the-trivia-api.com/api/questions?categories=${store.category}&limit=${store.limit}`)
         const data = await res.json()
-        questions.value = data.results
+        questions.value = data
         flag.value = true
     }
 
     const again = () => {
-        flag.value = false
-        getQuestions()
+        store.start = true
     }
 
     onMounted(() => {
         getQuestions()
     })
+
 </script>
 
 <template>

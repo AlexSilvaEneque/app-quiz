@@ -1,5 +1,6 @@
 <script setup>
     import { onMounted, ref } from 'vue'
+    import store from '../store'
 
     const prop = defineProps({
         questionsList: Object
@@ -24,16 +25,17 @@
     const list = prop.questionsList
 
     const doAlternatives = () => {
-        correct_ansswer.value = list[num.value].correct_answer
-        listAux.value.push(list[num.value].correct_answer)
-        for (let i = 0; i < list[num.value].incorrect_answers.length; i++) {
-            listAux.value.push(list[num.value].incorrect_answers[i])
+        correct_ansswer.value = list[num.value].correctAnswer
+        listAux.value.push(list[num.value].correctAnswer)
+        for (let i = 0; i < list[num.value].incorrectAnswers.length; i++) {
+            listAux.value.push(list[num.value].incorrectAnswers[i])
         }
         // ordenamiento random
         alternatives.value = listAux.value.sort(() => Math.random() - 0.5)
     }
 
     const doQuestion = () => {
+
         question.value = list[num.value].question
 
         doAlternatives()
@@ -81,7 +83,10 @@
 
         flag.value = false
 
-        doQuestion()
+
+        store.category = ''
+        store.limit = 5
+        store.start = true
     }
 
     onMounted(() => {
@@ -97,13 +102,20 @@
             </div>
             <div class="wrapper__formulario__alternativas">
                 <ul v-for="(alternative, index) in alternatives" :key="index">
-                    <li @click="checkAnswer(index, alternative)" :class="{correct: ((check && itemSelected === index) || (check_review && alternative === correct_ansswer)), incorrect: (!check && itemSelected === index), disabled : count > 0}">
+                    <li @click="checkAnswer(index, alternative)" 
+                        :class="{correct: ((check && itemSelected === index) || (check_review && alternative === correct_ansswer)), incorrect: (!check && itemSelected === index), disabled : count > 0}">
                         <span>{{index+1}})</span><label>{{alternative}}</label>
+                        <i v-if="((check && itemSelected === index) || (check_review && alternative === correct_ansswer))">
+                            <font-icon icon="fa-regular fa-circle-check" />
+                        </i>
+                        <i v-if="(!check && itemSelected === index)">
+                            <font-icon icon="fa-regular fa-circle-xmark" />
+                        </i>
                     </li>
                 </ul>
             </div>
             <div class="wrapper__formulario__footer">
-                <button v-if="num < 4" @click="nextQuestion" :hidden="count === 0">Siguiente</button>
+                <button v-if="num < store.limit-1" @click="nextQuestion" :hidden="count === 0">Siguiente</button>
                 <button v-else @click="checkResults">Finalizar</button>
             </div>
         </div>
@@ -148,7 +160,7 @@ li {
     cursor: pointer;
     display: flex;
     font-size: 18px;
-    height: 56px;
+    min-height: 56px;
     margin-bottom: 1rem;
     padding-left: 1rem;
     transition: .4s all;
@@ -165,12 +177,13 @@ li {
 .disabled {
     pointer-events: none;
 }
-/* li:hover {
-    background-color: #F9A826;
-    color: #fff;
-} */
+
+i {
+    margin-left: .3rem;
+}
+
 span {
-    margin-right: 1.8rem;
+    margin-right: 1.5rem;
 }
 .wrapper__formulario__footer {
     text-align: right;
